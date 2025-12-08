@@ -1,0 +1,25 @@
+# install jenkins in server (Amazon Linux EC2)
+sudo yum update –y
+sudo amazon-linux-extras install java-openjdk11 –y
+java –version
+sudo wget -O /etc/yum.repos.d/jenkins.repo \
+https://pkg.jenkins.io/redhat/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
+sudo yum install jenkins –y
+sudo systemctl enable jenkins
+sudo systemctl status Jenkins
+sudo systemctl start Jenkins
+
+# After that we have to enable the Ports in firwall
+Type: Custom TCP
+Port: 8080
+Source: 0.0.0.0/0  (or your IP only)
+
+# Here Brows public ip with port
+http://YOUR_EC2_PUBLIC_IP:8080
+
+#To Get the initial admin password to run this cmd in server
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+
+
