@@ -22,4 +22,16 @@ http://YOUR_EC2_PUBLIC_IP:8080
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 
+#One-Shot Jenkins Installation through the bash Script
+sudo yum update -y && \
+sudo amazon-linux-extras install java-openjdk11 -y && \
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo && \
+sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key && \
+sudo yum install jenkins -y && \
+sudo systemctl enable jenkins && \
+sudo systemctl start jenkins
+ # After runing this Script (./filename.sh) to get admin password 
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+#After that brows in chrom like public ip with port number 
+
 
