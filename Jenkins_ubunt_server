@@ -15,6 +15,8 @@ sudo systemctl enable jenkins
 sudo systemctl start jenkins
 sudo systemctl status jenkins
 
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
 # browse with public ip with port
 ex - http://13.127.28.162:8080/
 UN - Ganga
